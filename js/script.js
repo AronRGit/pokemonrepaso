@@ -78,6 +78,21 @@ return pokemon_Master.pokemon.sort((a,b) => {return(b.base_damage+b.max_damage)-
 
 
 //9. Crear una lista desordenada de Pokemons en nuestro documento HTML
+const root = document.getElementById("root")
+    const listaul = document.createElement("ul")
+    
+    root.append(listaul)
+    
+    function construirListaUl(){
+        for (const pokemon of pokemons) {
+            const li = document.createElement('li');
+            li.innerHTML = `${pokemon.name}`
+            
+            listaul.append(li);
+          }
+    }
+    construirListaUl()
+
 const listapokemons = document.getElementById("listapokemons")
 const table = document.createElement("table")
 const encabezados = document.createElement("thead")
